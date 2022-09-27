@@ -1,0 +1,42 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialogsItems {
+    padding: 10px;
+    color: white;
+
+}
+.user {
+    display: inline-block;
+    vertical-align: middle;
+
+    
+}
+.dialog {
+    border: 1px solid darkblue;
+    margin: 10px;
+}
+
+
+
+.dialog img {
+    margin: 0 auto;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.messages {
+    padding: 10px;
+    border: 1px solid beige;
+    margin: 0;
+    
+}
+
+.messages .message {
+    color: white;
+    text-align: start;
+}

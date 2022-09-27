@@ -1,0 +1,22 @@
+.avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    
+}
+.user {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+  
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: xx-large;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
