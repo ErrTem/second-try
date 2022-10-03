@@ -1,16 +1,18 @@
 import './App.css';
-import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
-
 import {
-  BrowserRouter as Router, Route, Routes
+  BrowserRouter as Router,
+  Route,
+  Routes
 } from "react-router-dom";
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import Music from './components/Music/Music';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings';
 import UsersContainer from './components/Users/UsersContainer';
+import ProfileContainer from './components/Profile/ProfileContainer';
+import HeaderContainer from './components/Header/HeaderContainer';
 
 
 
@@ -18,19 +20,30 @@ const App = (props) => {
   return (
     <Router>
       <div className='app-wrapper'>
-        <Header />
-        <Navbar  />
+        <HeaderContainer />
+        <Navbar />
 
         <div className='app-wrapper-content'>
           <Routes>
             <Route path='/dialogs/*'
-              element={<DialogsContainer/>} />
+              element={<DialogsContainer />} />
 
-            <Route path='/profile/*'
-              element={<Profile/>} />
+            {/* <Route path='/profile'
+              element={<ProfileContainer />} />
+            <Route path=":userId"
+              element={<ProfileContainer />} /> почему это не работает? */}
+
+            {/* <Route path="/profile/*" element={<ProfileContainer />} /> */}
+
+            <Route path="/profile" element={<ProfileContainer />}>
+              <Route path=":userId" element={<ProfileContainer />} />
+            </Route>
+
+
+
 
             <Route path='/users/*'
-              element={<UsersContainer/>} />
+              element={<UsersContainer />} />
 
             <Route path='/news/*' element={<News />} />
             <Route path='/music/*' element={<Music />} />
