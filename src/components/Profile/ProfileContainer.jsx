@@ -10,15 +10,15 @@ class ProfileContainer extends React.Component {
 
     componentDidMount() {
         debugger
+        // let userId = this.props.match  почему есть match  и к нему обращаемся?
         let userId = this.props.match.params.userId
-
         debugger
         if (!userId) {
             userId = 2;
         }
         this.props.getUserProfile(userId)
     }
-
+    debugger
     render() {
         return (
             <Profile {...this.props} />

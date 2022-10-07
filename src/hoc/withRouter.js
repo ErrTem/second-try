@@ -3,7 +3,7 @@ import { useMatch, useParams } from 'react-router-dom';
 
 export const withRouter = (Component) => {
     let RouterComponent = (props) => {
-        const match = useMatch(':userId/');
+        const match = useMatch('profile/:userId/');
         return <Component {...props} match={match}/>;
     }
     return RouterComponent;
