@@ -29,18 +29,7 @@ const App = (props) => {
             <Route path='/dialogs/*'
               element={<DialogsContainer />} />
 
-            {/* <Route path='/profile' element={<ProfileContainer />} />
-            <Route path=":userId" element={<ProfileContainer />} /> 
-            почему это не работает? */}
-
-            {/* <Route path="/profile/*" element={<ProfileContainer />} /> */}
-
-            <Route path="/profile" element={<ProfileContainer />}>
-              <Route path=":userId" element={<ProfileContainer />} />
-            </Route>
-
-
-
+            <Route path="/profile/*" element={<ProfileContainer />} />
 
             <Route path='/users/*'
               element={<UsersContainer />} />
