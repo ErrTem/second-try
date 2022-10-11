@@ -18,10 +18,10 @@ const ProfileInfo = (props) => {
                 ava+ des
             </div>
             <div>
-                <ProfileStatus status={'hello'}/>
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
             </div>
         </div>
     )
 }
-
+ 
 export default ProfileInfo

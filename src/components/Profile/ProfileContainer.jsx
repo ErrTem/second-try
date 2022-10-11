@@ -3,34 +3,36 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import withAuthRedirect from '../../hoc/withAuthRedirect'
 import { withRouter } from '../../hoc/withRouter'
-import { getUserProfile } from '../../redux/profile-reducer'
+import { getUserProfile, getStatus, updateStatus } from '../../redux/profile-reducer'
 import Profile from './Profile'
 
 class ProfileContainer extends React.Component {
 
     componentDidMount() {
-        debugger
+
         // let userId = this.props.match  почему есть match  и к нему обращаемся?
         let userId = this.props.match.params.userId
-        debugger
+
         if (!userId) {
             userId = 2;
         }
         this.props.getUserProfile(userId)
+        this.props.getStatus(userId)
     }
-    debugger
+
     render() {
         return (
-            <Profile {...this.props} />
+            <Profile {...this.props} status={this.props.status} updateStatus={this.props.updateStatus}/>
         )
     }
 }
 
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
+    status: state.profilePage.status
 })
 
-export default compose(connect(mapStateToProps, { getUserProfile }),
+export default compose(connect(mapStateToProps, { getUserProfile, getStatus, updateStatus }),
     withRouter,
     withAuthRedirect
 )(ProfileContainer)
