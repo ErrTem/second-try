@@ -8,6 +8,11 @@ import Profile from './Profile'
 
 class ProfileContainer extends React.Component {
 
+
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     return nextProps != this.props || nextState != this.state //PureComponent
+    // }
+    
     componentDidMount() {
 
         let userId = this.props.match.params.userId

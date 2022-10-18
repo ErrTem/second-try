@@ -9,7 +9,7 @@ class ProfileStatus extends React.Component {
         this.setState({ editMode: true })
     }
     deactivateEditMode = () => {
-        this.setState({ editMode: false })
+        this.setState({ editMode: false }) 
         this.props.updateStatus(this.state.status)
     }
     onStatusChange = (e) => {
@@ -25,7 +25,6 @@ class ProfileStatus extends React.Component {
         
         let a = this.state
         let b = this.props
-        console.log('bebrarium')
     }
 
     render() {
