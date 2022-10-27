@@ -8,13 +8,11 @@ import Profile from './Profile'
 
 class ProfileContainer extends React.Component {
 
-
     // shouldComponentUpdate(nextProps, nextState) {
     //     return nextProps != this.props || nextState != this.state //PureComponent
     // }
-    
-    componentDidMount() {
 
+    refreshProfile() {
         let userId = this.props.match.params.userId
         if (!userId) {
             userId = this.props.authorizedUserId;
@@ -26,12 +24,23 @@ class ProfileContainer extends React.Component {
         this.props.getStatus(userId)
     }
 
+    componentDidMount() {
+        this.refreshProfile()
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        debugger
+        if (this.props.match.params.userId != prevProps.match.params.userId) {
+            this.refreshProfile()
+        }
+    }
+
     render() {
         return (
-            <Profile 
-            {...this.props} 
-            status={this.props.status} 
-            updateStatus={this.props.updateStatus}
+            <Profile
+                {...this.props}
+                status={this.props.status}
+                updateStatus={this.props.updateStatus}
 
             />
         )
